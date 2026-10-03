@@ -1,0 +1,19 @@
+* { box-sizing: border-box; }
+.notif { width: 100%; min-height: 100dvh; background: radial-gradient(ellipse at 50% 20%, #6b1535 0%, #3a0820 100%); display: flex; justify-content: center; align-items: flex-start; padding: clamp(80px, 10vh, 110px) clamp(16px, 4vw, 40px) 60px; }
+.notif-inner { width: 100%; max-width: 480px; margin: 0 auto; }
+.back-btn { position: fixed; top: 25px; left: 25px; z-index: 999; display: flex; align-items: center; justify-content: center; width: 95px; height: 40px; background: rgba(58, 8, 32, 0.9); border: 1px solid rgba(247, 197, 213, 0.4); border-radius: 30px; color: #fde8f0; font-family: inherit; font-size: 13px; cursor: pointer; transition: background 0.2s ease; }
+.back-btn:hover { background: #8b2a45; border-color: #f7c5d5; }
+.title { margin: 0 0 8px; font-family: Georgia, serif; font-size: clamp(24px, 5vw, 32px); font-weight: normal; color: #ffffff; }
+.subtitle { margin: 0 0 clamp(24px, 4vh, 34px); color: rgba(247, 197, 213, 0.55); font-size: clamp(13px, 2vw, 15px); }
+.row { display: flex; align-items: center; gap: 16px; margin-bottom: 14px; padding: clamp(16px, 3vw, 20px); background: rgba(255, 255, 255, 0.035); border: 1px solid rgba(247, 197, 213, 0.16); border-radius: 16px; }
+.row-text { flex: 1; min-width: 0; }
+.row-title { margin: 0 0 4px; color: #ffffff; font-size: clamp(14px, 2.2vw, 16px); }
+.row-desc { margin: 0; color: rgba(247, 197, 213, 0.5); font-size: clamp(12px, 1.8vw, 14px); line-height: 1.4; }
+.toggle { flex-shrink: 0; width: 52px; height: 30px; padding: 3px; background: rgba(247, 197, 213, 0.18); border: none; border-radius: 100px; cursor: pointer; transition: background 0.25s ease; }
+.toggle.on { background: linear-gradient(135deg, #d4869c, #b05c78); }
+.knob { display: block; width: 24px; height: 24px; background: #ffffff; border-radius: 50%; transition: transform 0.25s ease; }
+.toggle.on .knob { transform: translateX(22px); }
+@media (max-width: 480px) { .back-btn { top: 18px; left: 18px; width: 88px; height: 37px; font-size: 12px; }
+.toggle { width: 48px; height: 28px; }
+.knob { width: 22px; height: 22px; }
+.toggle.on .knob { transform: translateX(20px); } }

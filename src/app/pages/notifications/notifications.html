@@ -1,0 +1,18 @@
+<div class="notif">
+    <div class="notif-inner">
+<button class="back-btn" routerLink="/profile">← Back</button>
+<h1 class="title">Notifications</h1>
+<p class="subtitle">Choose what you want to be notified about</p>
+
+<div class="row" *ngFor="let s of settings; let i = index">
+  <div class="row-text">
+    <p class="row-title">{{ s.title }}</p>
+    <p class="row-desc">{{ s.desc }}</p>
+  </div>
+
+  <button class="toggle" [class.on]="s.on" (click)="toggle(i)">
+    <span class="knob"></span>
+  </button>
+</div>
+</div>
+</div>

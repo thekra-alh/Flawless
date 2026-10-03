@@ -1,0 +1,54 @@
+<div class="results">
+    <div class="results-inner">
+        <button class="back-btn" routerLink="/camera">← Back</button>
+        <div class="score-row">
+          <div class="thumb">
+            <img *ngIf="data.photo" [src]="data.photo" class="photo">
+            <span *ngIf="!data.photo">🤳</span>
+          </div>
+        
+          <div class="score-box">
+            <p class="score-label">SKIN HEALTH SCORE</p>
+            <p class="score-value">{{ data.score }}<span class="score-max">/100</span></p>
+            <div class="score-bar">
+              <span class="score-fill" [style.width.%]="data.score"></span>
+            </div>
+            <span class="skin-tag">{{ data.skinType }}</span>
+          </div>
+        </div>
+        
+        <h2 class="section-title">Your Skin Analysis</h2>
+        
+        <div class="metrics">
+          <div class="metric">
+            <span class="metric-icon">💧</span>
+            <p class="metric-label">HYDRATION</p>
+            <p class="metric-value">{{ data.hydration }}</p>
+          </div>
+          <div class="metric">
+            <span class="metric-icon">🔴</span>
+            <p class="metric-label">INFLAMMATION</p>
+            <p class="metric-value">{{ data.inflammation }}</p>
+          </div>
+          <div class="metric">
+            <span class="metric-icon">✨</span>
+            <p class="metric-label">RADIANCE</p>
+            <p class="metric-value">{{ data.radiance }}</p>
+          </div>
+          <div class="metric">
+            <span class="metric-icon">🧴</span>
+            <p class="metric-label">BARRIER</p>
+            <p class="metric-value">{{ data.barrier }}</p>
+          </div>
+        </div>
+        
+        <div class="recs">
+          <div class="rec" *ngFor="let t of data.tips; let i = index">
+            <span class="rec-num">{{ i + 1 }}</span>
+            <p class="rec-text"><strong>{{ t.title }}</strong> — {{ t.text }}</p>
+          </div>
+        </div>
+        
+        <button class="history-btn" routerLink="/history">View Skin History →</button>
+</div>
+</div>

@@ -1,0 +1,27 @@
+<div class="survey">
+    <button class="back-btn" routerLink="/auth">← Back</button>
+    <div class="survey-inner">
+<div class="progress">
+    <span class="bar"
+          *ngFor="let q of questions; let i = index"
+          [class.done]="i <= current"></span>
+  </div>
+  
+  <p class="q-count">Question {{ current + 1 }} of {{ questions.length }}</p>
+  
+  <h2 class="q-title">{{ questions[current].title }}</h2>
+  
+  <button class="option"
+          *ngFor="let opt of questions[current].options; let i = index"
+          [class.selected]="answers[current] === i"
+          (click)="select(i)">
+    {{ opt }}
+  </button>
+  
+  <div class="nav">
+    <button class="back-link" *ngIf="current > 0" (click)="back()">← Back</button>
+    <button class="next-btn" *ngIf="!isLast" (click)="next()">Next →</button>
+    <button class="next-btn" *ngIf="isLast" (click)="finish()">Finish →</button>
+  </div>
+</div>
+</div>

@@ -1,0 +1,63 @@
+<div class="auth">
+  <div class="auth-card">
+<button class="back-btn" routerLink="/">← Back</button>
+<h1 class="logo">Flaw<span class="logo-accent">less</span></h1>
+
+<p class="sub">Your skin journey starts here</p>
+
+<div class="tabs">
+  <button
+    [class.active]="isLogin"
+    (click)="isLogin = true">
+    Log In
+  </button>
+
+  <button
+    [class.active]="!isLogin"
+    (click)="isLogin = false">
+    Sign Up
+  </button>
+</div>
+
+<form *ngIf="isLogin">
+
+  <div class="field">
+    <label>EMAIL</label>
+    <input type="email" [(ngModel)]="email" name="email" placeholder="you@example.com">
+  </div>
+
+  <div class="field">
+    <label>PASSWORD</label>
+    <input type="password" [(ngModel)]="password" name="password" placeholder="••••••••">
+  </div>
+
+  <button type="button" class="btn-full" (click)="submit()">
+    Log In →
+  </button>
+
+</form>
+
+<form *ngIf="!isLogin">
+
+  <div class="field">
+    <label>FULL NAME</label>
+    <input type="text" [(ngModel)]="name" name="name" placeholder="Your name">
+  </div>
+
+  <div class="field">
+    <label>EMAIL</label>
+    <input type="email" [(ngModel)]="email" name="email2" placeholder="you@example.com">
+  </div>
+
+  <div class="field">
+    <label>PASSWORD</label>
+    <input type="password" [(ngModel)]="password" name="password2" placeholder="••••••••">
+  </div>
+
+  <button type="button" class="btn-full" (click)="submit()">
+    Create Account →
+  </button>
+
+</form>
+</div>
+</div>

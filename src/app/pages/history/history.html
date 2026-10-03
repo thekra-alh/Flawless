@@ -1,0 +1,27 @@
+<div class="history">
+
+    <div class="history-inner">
+<button class="back-btn" routerLink="/results">← Back</button>
+<button class="profile-btn" routerLink="/profile">👤</button>
+<h1 class="title">Skin History 📈</h1>
+<p class="subtitle">Track your progress over time</p>
+
+<div class="entry" *ngFor="let s of data.history">
+    <div class="entry-thumb">
+      <img *ngIf="s.photo" [src]="s.photo" class="entry-photo">
+      <span *ngIf="!s.photo">🤳</span>
+    </div>
+    <div class="entry-info">
+        <p class="entry-date">{{ s.date }}</p>
+        <p class="entry-type">{{ s.skinType }}</p>
+        <p class="entry-score">Score: {{ s.score }}/100</p>
+        <div class="entry-bar"><span [style.width.%]="s.score"></span></div>
+      </div>
+      <span class="chevron">›</span>
+    </div>
+
+
+
+<button class="new-scan" routerLink="/camera">+ New Scan</button>
+</div>
+</div>

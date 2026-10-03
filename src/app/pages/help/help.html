@@ -1,0 +1,18 @@
+<div class="help">
+    <div class="help-inner">
+<button class="back-btn" routerLink="/profile">← Back</button>
+<h1 class="title">Help &amp; Support</h1>
+<p class="subtitle">Answers to common questions</p>
+
+<div class="faq" *ngFor="let f of faqs; let i = index">
+  <button class="faq-q" (click)="toggle(i)">
+    <span class="q-text">{{ f.q }}</span>
+    <span class="q-icon" [class.open]="open === i">›</span>
+  </button>
+
+  <p class="faq-a" *ngIf="open === i">{{ f.a }}</p>
+</div>
+
+
+</div>
+</div>

@@ -1,0 +1,27 @@
+<div class="camera">
+    <button class="back-btn" routerLink="/survey">← Back</button>
+    <div class="camera-inner">
+<button class="back-btn" routerLink="/survey">← Back</button>
+<h1 class="title">Scan Your Skin ✦</h1>
+
+<p class="subtitle">Position your face within the guide</p>
+
+<div class="frame">
+  <video #video *ngIf="streaming" class="video" playsinline muted></video>
+  <div class="oval" *ngIf="!streaming">
+    <span class="silhouette">👤</span>
+  </div>
+</div>
+
+<p class="error" *ngIf="error">{{ error }}</p>
+
+<button class="shutter" *ngIf="!streaming" (click)="start()">📷</button>
+<button class="shutter" *ngIf="streaming" (click)="capture()">📸</button>
+
+<div class="tips">
+  <span class="tip">☀️ Good light</span>
+  <span class="tip">😐 Neutral</span>
+  <span class="tip">📏 Distance</span>
+</div>
+</div>
+</div>

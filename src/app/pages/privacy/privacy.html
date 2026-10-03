@@ -1,0 +1,40 @@
+<div class="privacy">
+    <div class="privacy-inner">
+<button class="back-btn" routerLink="/profile">← Back</button>
+<h1 class="title">Privacy Settings</h1>
+<p class="subtitle">Control how your data is used</p>
+
+<div class="row" *ngFor="let s of settings; let i = index">
+  <div class="row-text">
+    <p class="row-title">{{ s.title }}</p>
+    <p class="row-desc">{{ s.desc }}</p>
+  </div>
+
+  <button class="toggle" [class.on]="s.on" (click)="toggle(i)">
+    <span class="knob"></span>
+  </button>
+</div>
+
+<div class="note">
+  <p class="note-title">🔒 Your data is protected</p>
+  <p class="note-text">
+    Facial images are used only for analysis and are never shared with third parties.
+    All data is transmitted over encrypted connections.
+  </p>
+</div>
+
+<button class="danger-btn" *ngIf="!confirming" (click)="askDelete()">
+  Delete All My Data
+</button>
+
+<div class="confirm" *ngIf="confirming">
+  <p class="confirm-text">This will permanently delete all your scans and history. Continue?</p>
+  <div class="confirm-row">
+    <button class="cancel-btn" (click)="cancelDelete()">Cancel</button>
+    <button class="danger-btn small" (click)="confirmDelete()">Yes, Delete</button>
+  </div>
+</div>
+
+<p class="done-msg" *ngIf="deleted">✓ All data has been deleted</p>
+</div>
+</div>

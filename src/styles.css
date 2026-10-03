@@ -1,1 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  :root {
+    --burgundy: #3A0820;
+    --pink: #F7C5D5;
+    --pink-dark: #C4607A;
+  }
+  
+  body {
+    font-family: 'Georgia', serif;
+    background-color: #3A0820;
+    color: #FFF5F8;
+    min-height: 100vh;
+  }
+  
+  button {
+    cursor: pointer;
+  }

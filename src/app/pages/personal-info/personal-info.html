@@ -1,0 +1,31 @@
+<div class="info">
+    <div class="info-inner">
+<button class="back-btn" routerLink="/profile">← Back</button>
+<h1 class="title">Personal Information</h1>
+<p class="subtitle">Manage your account details</p>
+
+<div class="field">
+  <label>FULL NAME</label>
+  <input type="text" value="Sara" placeholder="Your name">
+</div>
+
+<div class="field">
+  <label>EMAIL</label>
+  <input type="email" value="sara@example.com" placeholder="you@example.com">
+</div>
+
+<div class="field">
+  <label>AGE</label>
+  <input type="number" value="22" placeholder="Your age">
+</div>
+
+<div class="field">
+  <label>SKIN TYPE</label>
+  <input type="text" value="Combination" placeholder="Your skin type">
+</div>
+
+<button class="save-btn" (click)="save()">Save Changes</button>
+
+<p class="saved-msg" *ngIf="saved">✓ Changes saved</p>
+</div>
+</div>

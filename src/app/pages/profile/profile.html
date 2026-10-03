@@ -1,0 +1,62 @@
+<div class="profile">
+    <div class="profile-inner">
+<button class="back-btn" routerLink="/history">← Back</button>
+<div class="avatar">👤</div>
+
+<h1 class="name">{{ data.userName }}</h1>
+<p class="email">{{ data.userEmail }}</p>
+
+<div class="stats">
+  <div class="stat">
+    <p class="stat-value">{{ data.scanCount }}</p>
+    <p class="stat-label">Scans</p>
+  </div>
+  <div class="stat">
+    <p class="stat-value">{{ data.lastScore }}</p>
+    <p class="stat-label">Last Score</p>
+  </div>
+  <div class="stat">
+    <p class="stat-value">↑{{ data.progress }}</p>
+    <p class="stat-label">Progress</p>
+  </div>
+</div>
+
+<div class="menu">
+
+    <button class="menu-item" routerLink="/personal-info">
+    <span class="menu-icon">👤</span>
+    <span class="menu-text">Personal Information</span>
+
+    <span class="chevron">›</span>
+
+  </button>
+
+  <button class="menu-item" routerLink="/notifications">
+    <span class="menu-icon">🔔</span>
+    <span class="menu-text">Notifications</span>
+    <span class="chevron">›</span>
+  </button>
+
+  <button class="menu-item" routerLink="/privacy">
+    <span class="menu-icon">🔒</span>
+    <span class="menu-text">Privacy Settings</span>
+    <span class="chevron">›</span>
+  </button>
+
+  <button class="menu-item" routerLink="/survey">
+    <span class="menu-icon">📋</span>
+    <span class="menu-text">My Skin Survey</span>
+    <span class="chevron">›</span>
+  </button>
+
+  <button class="menu-item" routerLink="/help">
+    <span class="menu-icon">❓</span>
+    <span class="menu-text">Help &amp; Support</span>
+    <span class="chevron">›</span>
+  </button>
+
+</div>
+
+<button class="logout" routerLink="/auth">Log Out</button>
+</div>
+</div>
